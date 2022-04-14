@@ -18,6 +18,7 @@
 		7E6A6373280810E700FB75F5 /* LoodosMovieBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6372280810E700FB75F5 /* LoodosMovieBoxUITests.swift */; };
 		7E6A6375280810E700FB75F5 /* LoodosMovieBoxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6374280810E700FB75F5 /* LoodosMovieBoxUITestsLaunchTests.swift */; };
 		7EF27B902808183D0029E795 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF27B8F2808183D0029E795 /* GoogleService-Info.plist */; };
+		7EF27B9228081AF50029E795 /* LauncScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF27B9128081AF50029E795 /* LauncScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		7E6A6372280810E700FB75F5 /* LoodosMovieBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoodosMovieBoxUITests.swift; sourceTree = "<group>"; };
 		7E6A6374280810E700FB75F5 /* LoodosMovieBoxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoodosMovieBoxUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7EF27B8F2808183D0029E795 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7EF27B9128081AF50029E795 /* LauncScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncScreenViewController.swift; sourceTree = "<group>"; };
 		84D03733829A86EEEE92F101 /* Pods-LoodosMovieBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoodosMovieBox.debug.xcconfig"; path = "Target Support Files/Pods-LoodosMovieBox/Pods-LoodosMovieBox.debug.xcconfig"; sourceTree = "<group>"; };
 		EE7893401C76CE00C68A5D6D /* Pods_LoodosMovieBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoodosMovieBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBB423171A21C57B7FBBC6B /* Pods-LoodosMovieBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoodosMovieBox.release.xcconfig"; path = "Target Support Files/Pods-LoodosMovieBox/Pods-LoodosMovieBox.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,9 +124,10 @@
 				7E6A6355280810E600FB75F5 /* ViewController.swift */,
 				7E6A6357280810E600FB75F5 /* Main.storyboard */,
 				7E6A635A280810E700FB75F5 /* Assets.xcassets */,
-				7E6A635C280810E700FB75F5 /* LaunchScreen.storyboard */,
-				7EF27B8F2808183D0029E795 /* GoogleService-Info.plist */,
 				7E6A635F280810E700FB75F5 /* Info.plist */,
+				7EF27B8F2808183D0029E795 /* GoogleService-Info.plist */,
+				7E6A635C280810E700FB75F5 /* LaunchScreen.storyboard */,
+				7EF27B9128081AF50029E795 /* LauncScreenViewController.swift */,
 			);
 			path = LoodosMovieBox;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF27B9228081AF50029E795 /* LauncScreenViewController.swift in Sources */,
 				7E6A6356280810E600FB75F5 /* ViewController.swift in Sources */,
 				7E6A6352280810E600FB75F5 /* AppDelegate.swift in Sources */,
 				7E6A6354280810E600FB75F5 /* SceneDelegate.swift in Sources */,
