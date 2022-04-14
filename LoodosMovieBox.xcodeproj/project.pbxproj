@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28AE83338398B695A8ADD82B /* Pods_LoodosMovieBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7893401C76CE00C68A5D6D /* Pods_LoodosMovieBox.framework */; };
 		7E6A6352280810E600FB75F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6351280810E600FB75F5 /* AppDelegate.swift */; };
 		7E6A6354280810E600FB75F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6353280810E600FB75F5 /* SceneDelegate.swift */; };
 		7E6A6356280810E600FB75F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6355280810E600FB75F5 /* ViewController.swift */; };
@@ -49,6 +50,9 @@
 		7E6A636E280810E700FB75F5 /* LoodosMovieBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoodosMovieBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E6A6372280810E700FB75F5 /* LoodosMovieBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoodosMovieBoxUITests.swift; sourceTree = "<group>"; };
 		7E6A6374280810E700FB75F5 /* LoodosMovieBoxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoodosMovieBoxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		84D03733829A86EEEE92F101 /* Pods-LoodosMovieBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoodosMovieBox.debug.xcconfig"; path = "Target Support Files/Pods-LoodosMovieBox/Pods-LoodosMovieBox.debug.xcconfig"; sourceTree = "<group>"; };
+		EE7893401C76CE00C68A5D6D /* Pods_LoodosMovieBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoodosMovieBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFBB423171A21C57B7FBBC6B /* Pods-LoodosMovieBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoodosMovieBox.release.xcconfig"; path = "Target Support Files/Pods-LoodosMovieBox/Pods-LoodosMovieBox.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28AE83338398B695A8ADD82B /* Pods_LoodosMovieBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C39C7FA978C8504FAE4AB88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84D03733829A86EEEE92F101 /* Pods-LoodosMovieBox.debug.xcconfig */,
+				EFBB423171A21C57B7FBBC6B /* Pods-LoodosMovieBox.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7E6A6345280810E500FB75F5 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +98,8 @@
 				7E6A6367280810E700FB75F5 /* LoodosMovieBoxTests */,
 				7E6A6371280810E700FB75F5 /* LoodosMovieBoxUITests */,
 				7E6A634F280810E600FB75F5 /* Products */,
+				6C39C7FA978C8504FAE4AB88 /* Pods */,
+				9751142996D55DE99FFF5AF0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +144,14 @@
 			path = LoodosMovieBoxUITests;
 			sourceTree = "<group>";
 		};
+		9751142996D55DE99FFF5AF0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE7893401C76CE00C68A5D6D /* Pods_LoodosMovieBox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E6A6378280810E700FB75F5 /* Build configuration list for PBXNativeTarget "LoodosMovieBox" */;
 			buildPhases = (
+				6633207F885D385BDE8B2E03 /* [CP] Check Pods Manifest.lock */,
 				7E6A634A280810E600FB75F5 /* Sources */,
 				7E6A634B280810E600FB75F5 /* Frameworks */,
 				7E6A634C280810E600FB75F5 /* Resources */,
+				1B795FEDFB4A94216A2F7BB8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +279,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B795FEDFB4A94216A2F7BB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoodosMovieBox/Pods-LoodosMovieBox-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoodosMovieBox/Pods-LoodosMovieBox-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoodosMovieBox/Pods-LoodosMovieBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6633207F885D385BDE8B2E03 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LoodosMovieBox-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7E6A634A280810E600FB75F5 /* Sources */ = {
@@ -434,6 +503,7 @@
 		};
 		7E6A6379280810E700FB75F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84D03733829A86EEEE92F101 /* Pods-LoodosMovieBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,6 +532,7 @@
 		};
 		7E6A637A280810E700FB75F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFBB423171A21C57B7FBBC6B /* Pods-LoodosMovieBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
