@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		28AE83338398B695A8ADD82B /* Pods_LoodosMovieBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7893401C76CE00C68A5D6D /* Pods_LoodosMovieBox.framework */; };
+		7E11A3772808942E00C2C918 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A3762808942E00C2C918 /* APICaller.swift */; };
+		7E11A3792808982E00C2C918 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A3782808982E00C2C918 /* Movie.swift */; };
+		7E11A37B2808A14000C2C918 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A37A2808A14000C2C918 /* MovieTableViewCell.swift */; };
 		7E6A6352280810E600FB75F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6351280810E600FB75F5 /* AppDelegate.swift */; };
 		7E6A6354280810E600FB75F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6353280810E600FB75F5 /* SceneDelegate.swift */; };
 		7E6A6356280810E600FB75F5 /* SearchMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6355280810E600FB75F5 /* SearchMovieViewController.swift */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E11A3762808942E00C2C918 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		7E11A3782808982E00C2C918 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		7E11A37A2808A14000C2C918 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		7E6A634E280810E600FB75F5 /* LoodosMovieBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoodosMovieBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E6A6351280810E600FB75F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E6A6353280810E600FB75F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +134,9 @@
 				7EF27B8F2808183D0029E795 /* GoogleService-Info.plist */,
 				7E6A635C280810E700FB75F5 /* LaunchScreen.storyboard */,
 				7EF27B9128081AF50029E795 /* LauncScreenViewController.swift */,
+				7E11A3762808942E00C2C918 /* APICaller.swift */,
+				7E11A3782808982E00C2C918 /* Movie.swift */,
+				7E11A37A2808A14000C2C918 /* MovieTableViewCell.swift */,
 			);
 			path = LoodosMovieBox;
 			sourceTree = "<group>";
@@ -335,7 +344,10 @@
 			files = (
 				7EF27B9228081AF50029E795 /* LauncScreenViewController.swift in Sources */,
 				7E6A6356280810E600FB75F5 /* SearchMovieViewController.swift in Sources */,
+				7E11A37B2808A14000C2C918 /* MovieTableViewCell.swift in Sources */,
+				7E11A3792808982E00C2C918 /* Movie.swift in Sources */,
 				7E6A6352280810E600FB75F5 /* AppDelegate.swift in Sources */,
+				7E11A3772808942E00C2C918 /* APICaller.swift in Sources */,
 				7E6A6354280810E600FB75F5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
