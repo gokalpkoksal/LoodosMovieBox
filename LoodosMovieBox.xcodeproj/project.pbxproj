@@ -10,7 +10,7 @@
 		28AE83338398B695A8ADD82B /* Pods_LoodosMovieBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7893401C76CE00C68A5D6D /* Pods_LoodosMovieBox.framework */; };
 		7E6A6352280810E600FB75F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6351280810E600FB75F5 /* AppDelegate.swift */; };
 		7E6A6354280810E600FB75F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6353280810E600FB75F5 /* SceneDelegate.swift */; };
-		7E6A6356280810E600FB75F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6355280810E600FB75F5 /* ViewController.swift */; };
+		7E6A6356280810E600FB75F5 /* SearchMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6355280810E600FB75F5 /* SearchMovieViewController.swift */; };
 		7E6A6359280810E600FB75F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E6A6357280810E600FB75F5 /* Main.storyboard */; };
 		7E6A635B280810E700FB75F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E6A635A280810E700FB75F5 /* Assets.xcassets */; };
 		7E6A635E280810E700FB75F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E6A635C280810E700FB75F5 /* LaunchScreen.storyboard */; };
@@ -42,7 +42,7 @@
 		7E6A634E280810E600FB75F5 /* LoodosMovieBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoodosMovieBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E6A6351280810E600FB75F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E6A6353280810E600FB75F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7E6A6355280810E600FB75F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7E6A6355280810E600FB75F5 /* SearchMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieViewController.swift; sourceTree = "<group>"; };
 		7E6A6358280810E600FB75F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E6A635A280810E700FB75F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E6A635D280810E700FB75F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 			children = (
 				7E6A6351280810E600FB75F5 /* AppDelegate.swift */,
 				7E6A6353280810E600FB75F5 /* SceneDelegate.swift */,
-				7E6A6355280810E600FB75F5 /* ViewController.swift */,
+				7E6A6355280810E600FB75F5 /* SearchMovieViewController.swift */,
 				7E6A6357280810E600FB75F5 /* Main.storyboard */,
 				7E6A635A280810E700FB75F5 /* Assets.xcassets */,
 				7E6A635F280810E700FB75F5 /* Info.plist */,
@@ -334,7 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EF27B9228081AF50029E795 /* LauncScreenViewController.swift in Sources */,
-				7E6A6356280810E600FB75F5 /* ViewController.swift in Sources */,
+				7E6A6356280810E600FB75F5 /* SearchMovieViewController.swift in Sources */,
 				7E6A6352280810E600FB75F5 /* AppDelegate.swift in Sources */,
 				7E6A6354280810E600FB75F5 /* SceneDelegate.swift in Sources */,
 			);
