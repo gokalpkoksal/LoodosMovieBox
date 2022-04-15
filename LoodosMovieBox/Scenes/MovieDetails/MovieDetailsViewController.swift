@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Kingfisher
+import Firebase
 
 class MovieDetailsViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class MovieDetailsViewController: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        Analytics.logEvent(movie.title, parameters: nil)
         movieNameLabel.text = movie.title
         setImage()
     }
