@@ -16,7 +16,6 @@ final class SearchMovieViewModel {
         APICaller.shared.getMovies(with: name) { [weak self] result in
             switch result {
             case .success(let movie):
-                let movie = Movie(title: movie.title, year: movie.year)
                 self?.delegate?.addMovie(movie: movie)
                 self?.delegate?.reloadTableData()
                 

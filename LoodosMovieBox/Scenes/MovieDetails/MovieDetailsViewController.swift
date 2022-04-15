@@ -7,15 +7,26 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class MovieDetailsViewController: UIViewController {
     
     @IBOutlet weak var movieNameLabel: UILabel!
+    
+    @IBOutlet weak var movieImageView: UIImageView!
     
     var movie = Movie()
     
     override func viewDidLoad(){
         super.viewDidLoad()
         movieNameLabel.text = movie.title
+        setImage()
+    }
+    
+    func setImage() {
+        if movie.image != "" {
+            movieImageView.kf.indicatorType = .activity
+            movieImageView.kf.setImage(with: URL(string: movie.image), placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
+        }
     }
 }

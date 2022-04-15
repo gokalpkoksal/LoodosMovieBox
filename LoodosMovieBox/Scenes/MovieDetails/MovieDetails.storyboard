@@ -16,24 +16,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXW-HL-bza">
-                                <rect key="frame" x="186" y="129" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oOk-IE-PjS">
+                                <rect key="frame" x="0.0" y="98" width="414" height="396"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oOk-IE-PjS" secondAttribute="height" multiplier="23:22" id="luf-Gl-0gc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXW-HL-bza">
+                                <rect key="frame" x="0.0" y="64" width="414" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nXW-HL-bza" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="6XT-Ym-dZB"/>
+                            <constraint firstItem="oOk-IE-PjS" firstAttribute="top" secondItem="nXW-HL-bza" secondAttribute="bottom" constant="5" id="FtP-oV-3VW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nXW-HL-bza" secondAttribute="trailing" id="OWA-eO-ski"/>
+                            <constraint firstItem="nXW-HL-bza" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="RqX-FI-4zV"/>
+                            <constraint firstItem="oOk-IE-PjS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="l2x-Je-3Qf"/>
+                            <constraint firstItem="oOk-IE-PjS" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="lu8-Kz-upR"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="movieImageView" destination="oOk-IE-PjS" id="tFp-lB-O6T"/>
                         <outlet property="movieNameLabel" destination="nXW-HL-bza" id="iiP-Mz-1IF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="93" y="80"/>
+            <point key="canvasLocation" x="92.753623188405811" y="79.6875"/>
         </scene>
     </scenes>
     <resources>

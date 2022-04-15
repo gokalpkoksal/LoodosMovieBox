@@ -44,7 +44,3 @@ final class APICaller {
         task.resume()
     }
 }
-
-struct APIResponse: Codable {
-    let movie: Movie
-}
