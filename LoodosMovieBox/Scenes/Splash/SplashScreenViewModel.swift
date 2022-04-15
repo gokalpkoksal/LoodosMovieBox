@@ -1,27 +1,21 @@
 //
-//  LauncScreenViewController.swift
+//  SplashScreenViewModel.swift
 //  LoodosMovieBox
 //
-//  Created by Gökalp Köksal on 14.04.2022.
+//  Created by Gökalp Köksal on 15.04.2022.
 //
 
 import Foundation
 import FirebaseRemoteConfig
-import UIKit
 
-class LaunchScreenViewController: UIViewController {
+final class SplashScreenViewModel {
+    weak var delegate: SplashScreenDelegate?
     
-    // connect with launchscreen storyboard
-    @IBOutlet weak var label_loodos: UILabel!
+    init() { }
+    
     private let remoteConfig = RemoteConfig.remoteConfig()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        fetchRemoteValues()
-    }
-
-    func fetchRemoteValues() {
+    
+    func fetchRemoteLogoText() {
         let defaults: [String: NSObject] = ["text_loodos_remote": "loodos_default" as NSObject]
         remoteConfig.setDefaults(defaults)
         
@@ -37,7 +31,7 @@ class LaunchScreenViewController: UIViewController {
                     }
                     
                     if let fetchedValue = self.remoteConfig.configValue(forKey: "text_loodos_remote").stringValue {
-                        self.label_loodos.text = fetchedValue
+                        self.delegate?.updateLogoText(text: fetchedValue)
                         print("fetched: \(fetchedValue)")
                     }
                 }
