@@ -11,23 +11,23 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
     
     var viewModel = SearchMovieViewModel()
     
+    @IBOutlet weak var tableView: UITableView!
+    
     private var movies = [Movie]()
     private let searchController = UISearchController(searchResultsController: nil)
-    
-    private let tableView: UITableView = {
-        let table = UITableView()
-        table.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier)
-        return table
-    }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Search Movies"
         viewModel.delegate = self
-        view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
+        configureTableView()
         createSearchBar()
+    }
+    
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier)
+        tableView.dataSource = self
     }
     
     private func createSearchBar() {

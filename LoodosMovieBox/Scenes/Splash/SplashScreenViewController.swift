@@ -44,7 +44,7 @@ class SplashScreenViewController: UIViewController, SplashScreenDelegate {
     }
     
     private func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(threeSecondsCounter), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(threeSecondsCounter), userInfo: nil, repeats: true)
     }
     
     @objc func threeSecondsCounter() {
@@ -56,8 +56,8 @@ class SplashScreenViewController: UIViewController, SplashScreenDelegate {
     }
     
     private func navigateToSearchMovieController() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "SearchMovieViewController") as! SearchMovieViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        let storyboard = UIStoryboard(name: "SearchMovie", bundle: nil)
+        guard let vc = storyboard.instantiateInitialViewController() else { return }
+        self.present(vc, animated: true, completion: nil)
     }
 }

@@ -31,7 +31,9 @@ final class SplashScreenViewModel {
                     }
                     
                     if let fetchedValue = self.remoteConfig.configValue(forKey: "text_loodos_remote").stringValue {
-                        self.delegate?.updateLogoText(text: fetchedValue)
+                        DispatchQueue.main.async {
+                            self.delegate?.updateLogoText(text: fetchedValue)
+                        }
                         print("fetched: \(fetchedValue)")
                     }
                 }
