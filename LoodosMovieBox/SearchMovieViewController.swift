@@ -7,11 +7,10 @@
 
 import UIKit
 
-class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITableViewDelegate, UITableViewDataSource {
-
-    // let searchController = UISearchController()
+class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     private var viewModels = [MovieTableViewCellViewModel]()
+    private let searchVC = UISearchController(searchResultsController: nil)
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -26,32 +25,16 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-        // searchController.searchResultsUpdater = self
-        
-        APICaller.shared.getMovies { [weak self] result in
-            switch result {
-            case .success(let movie):
-                let viewModel = MovieTableViewCellViewModel(title: movie.Title, year: movie.Year)
-                self?.viewModels.append(viewModel)
-                
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
+        createSearchBar()
+    }
+    
+    private func createSearchBar() {
+        navigationItem.searchController = searchVC
+        searchVC.searchBar.delegate = self
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        guard let typedMovieName = searchController.searchBar.text else {
-            return
-        }
-        searchMovie(typedMovieName)
-    }
-    
-    private func searchMovie(_ movieName: String) {
-        // TODO: search the movie
+        //
     }
     
     override func viewDidLayoutSubviews() {
@@ -78,5 +61,24 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
         // go to the selected movie's details
     }
 
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModels.removeAll()
+        guard let text = searchBar.text, !text.isEmpty else {
+            return
+        }
+        APICaller.shared.getMovies(with: text) { [weak self] result in
+            switch result {
+            case .success(let movie):
+                let viewModel = MovieTableViewCellViewModel(title: movie.Title, year: movie.Year)
+                self?.viewModels.append(viewModel)
+                
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
 

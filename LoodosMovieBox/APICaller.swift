@@ -12,17 +12,19 @@ final class APICaller {
     
     private let apiKey = "37e5bca1"
     
-    var searchedTitle = "car"
-    
     private init() {}
     
-    public func getUrl(title: String, apiKey: String) -> URL? {
+    public func getUrl(title: String) -> URL? {
         let urlString = "https://www.omdbapi.com/?t=\(title)&apikey=\(apiKey)"
         return URL(string: urlString)
     }
     
-    public func getMovies(completion: @escaping (Result<Movie, Error>) -> Void) {
-        guard let url = getUrl(title: searchedTitle, apiKey: apiKey) else {
+    public func getMovies(with title: String, completion: @escaping (Result<Movie, Error>) -> Void) {
+        guard !title.trimmingCharacters(in: .whitespaces).isEmpty else {
+            return
+        }
+        
+        guard let url = getUrl(title: title) else {
             return
         }
         
@@ -33,8 +35,6 @@ final class APICaller {
             else if let data = data {
                 do {
                     let result = try JSONDecoder().decode(Movie.self, from: data)
-                    
-                    print("Movie count = \(result.Title)")
                     completion(.success(result))
                 } catch {
                     completion(.failure(error))
