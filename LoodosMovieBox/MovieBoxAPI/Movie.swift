@@ -9,6 +9,21 @@ import Foundation
 
 
 public struct Movie: Codable {
-    let Title: String
-    let Year: String
+    let title: String
+    let year: String
+    
+    init(title: String, year: String) {
+        self.title = title
+        self.year = year
+    }
+    
+    init() {
+        self.title = ""
+        self.year = ""
+    }
+    
+    public enum CodingKeys: String, CodingKey {
+        case title = "Title"
+        case year = "Year"
+    }
 }

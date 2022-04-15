@@ -11,7 +11,7 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
     
     var viewModel = SearchMovieViewModel()
     
-    private var movies = [MovieTableViewCellViewModel]()
+    private var movies = [Movie]()
     private let searchController = UISearchController(searchResultsController: nil)
     
     private let tableView: UITableView = {
@@ -61,6 +61,10 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
         tableView.deselectRow(at: indexPath, animated: true)
         
         // go to the selected movie's details
+        let storyboard = UIStoryboard(name: "MovieDetails", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MovieDetailsViewController") as! MovieDetailsViewController
+        vc.movie = self.movies[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -71,7 +75,7 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
         viewModel.searchMovie(name: text)
     }
     
-    func addMovie(movie: MovieTableViewCellViewModel) {
+    func addMovie(movie: Movie) {
         self.movies.append(movie)
     }
     

@@ -8,6 +8,6 @@
 import Foundation
 
 protocol SearchMovieDelegate: AnyObject {
-    func addMovie(movie: MovieTableViewCellViewModel)
+    func addMovie(movie: Movie)
     func reloadTableData()
 }

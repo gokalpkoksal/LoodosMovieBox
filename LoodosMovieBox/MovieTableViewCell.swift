@@ -48,7 +48,7 @@ class MovieTableViewCell: UITableViewCell {
         super.prepareForReuse()
     }
     
-    func configure(with viewModel: MovieTableViewCellViewModel) {
+    func configure(with viewModel: Movie) {
         movieTitleLabel.text = viewModel.title
     }
 
