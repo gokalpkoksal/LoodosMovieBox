@@ -7,10 +7,12 @@
 
 import UIKit
 
-class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, SearchMovieDelegate {
     
-    private var viewModels = [MovieTableViewCellViewModel]()
-    private let searchVC = UISearchController(searchResultsController: nil)
+    var viewModel = SearchMovieViewModel()
+    
+    private var movies = [MovieTableViewCellViewModel]()
+    private let searchController = UISearchController(searchResultsController: nil)
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -21,7 +23,7 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Search Movies"
-        
+        viewModel.delegate = self
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
@@ -29,8 +31,8 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
     }
     
     private func createSearchBar() {
-        navigationItem.searchController = searchVC
-        searchVC.searchBar.delegate = self
+        navigationItem.searchController = searchController
+        searchController.searchBar.delegate = self
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -44,14 +46,14 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
     
     // Table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModels.count
+        return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier, for: indexPath) as? MovieTableViewCell else {
             fatalError()
         }
-        cell.configure(with: viewModels[indexPath.row])
+        cell.configure(with: movies[indexPath.row])
         return cell
     }
     
@@ -62,22 +64,20 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        viewModels.removeAll()
+        movies.removeAll()
         guard let text = searchBar.text, !text.isEmpty else {
             return
         }
-        APICaller.shared.getMovies(with: text) { [weak self] result in
-            switch result {
-            case .success(let movie):
-                let viewModel = MovieTableViewCellViewModel(title: movie.Title, year: movie.Year)
-                self?.viewModels.append(viewModel)
-                
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            case .failure(let error):
-                print(error)
-            }
+        viewModel.searchMovie(name: text)
+    }
+    
+    func addMovie(movie: MovieTableViewCellViewModel) {
+        self.movies.append(movie)
+    }
+    
+    func reloadTableData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
 }
