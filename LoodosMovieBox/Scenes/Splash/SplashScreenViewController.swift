@@ -11,6 +11,7 @@ import UIKit
 
 class SplashScreenViewController: UIViewController, SplashScreenDelegate {
     
+    let reachability = try! Reachability()
     var viewModel = SplashScreenViewModel()
     var timer: Timer = Timer()
     var counter = 0
@@ -21,7 +22,20 @@ class SplashScreenViewController: UIViewController, SplashScreenDelegate {
         super.viewDidLoad()
         viewModel.delegate = self
         loodosLabel.text = "loodos(default)"
+        checkInternetConnection()
         viewModel.fetchRemoteLogoText()
+    }
+    
+    private func checkInternetConnection() {
+        reachability.whenUnreachable = { _ in
+            self.showNoInternetConnectionAlert()
+        }
+    }
+    
+    private func showNoInternetConnectionAlert() {
+        let alert = UIAlertController(title: "No Internet", message: "This app requires internet connection!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func updateLogoText(text: String) {
