@@ -21,7 +21,6 @@ class SplashScreenViewController: UIViewController, SplashScreenDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        loodosLabel.text = "loodos(default)"
         checkInternetConnection()
         viewModel.fetchRemoteLogoText()
     }
@@ -49,7 +48,7 @@ class SplashScreenViewController: UIViewController, SplashScreenDelegate {
     
     @objc func threeSecondsCounter() {
         counter = counter + 1
-        if counter == 3 {
+        if counter == 2 {
             timer.invalidate()
             navigateToSearchMovieController()
         }
