@@ -149,7 +149,6 @@
 				7E6A635C280810E700FB75F5 /* LaunchScreen.storyboard */,
 				7EF27B8F2808183D0029E795 /* GoogleService-Info.plist */,
 				7E6A635F280810E700FB75F5 /* Info.plist */,
-				7E11A37A2808A14000C2C918 /* MovieTableViewCell.swift */,
 			);
 			path = LoodosMovieBox;
 			sourceTree = "<group>";
@@ -188,6 +187,7 @@
 				7EEE1D0428099FFF00FC5F28 /* SearchMovieContracts.swift */,
 				7E6A6355280810E600FB75F5 /* SearchMovieViewController.swift */,
 				7EEE1D0028099F2100FC5F28 /* SearchMovieViewModel.swift */,
+				7E11A37A2808A14000C2C918 /* MovieTableViewCell.swift */,
 			);
 			path = SearchMovie;
 			sourceTree = "<group>";

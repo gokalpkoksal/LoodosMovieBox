@@ -28,6 +28,8 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
         tableView.delegate = self
         tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier)
         tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
     }
     
     private func createSearchBar() {
@@ -36,12 +38,7 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        //
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableView.frame = view.bounds
+        // do nothing
     }
     
     // Table
