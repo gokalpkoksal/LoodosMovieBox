@@ -11,17 +11,27 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
     
     var viewModel = SearchMovieViewModel()
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
     private var movies = [Movie]()
     private let searchController = UISearchController(searchResultsController: nil)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Search Movies"
         viewModel.delegate = self
+        configureActivityIndicator()
         configureTableView()
         createSearchBar()
+    }
+    
+    private func configureActivityIndicator() {
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        activityIndicator.style = .large
+        activityIndicator.isHidden = true
     }
     
     private func configureTableView() {
@@ -81,5 +91,20 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
             self.tableView.reloadData()
         }
     }
+    
+    func setLoading(_ isLoading: Bool) {
+        if isLoading {
+            DispatchQueue.main.async {
+                self.activityIndicator.isHidden = false
+                self.activityIndicator.startAnimating()
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
+            }
+        }
+    }
+    
 }
 

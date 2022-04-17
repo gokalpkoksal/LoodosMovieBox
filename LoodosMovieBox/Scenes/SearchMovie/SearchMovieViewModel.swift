@@ -13,9 +13,11 @@ final class SearchMovieViewModel {
     init() { }
     
     func searchMovie(name: String) {
+        self.delegate?.setLoading(true)
         APICaller.shared.getMovies(with: name) { [weak self] result in
             switch result {
             case .success(let movie):
+                self?.delegate?.setLoading(false)
                 self?.delegate?.addMovie(movie: movie)
                 self?.delegate?.reloadTableData()
                 

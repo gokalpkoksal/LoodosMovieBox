@@ -10,4 +10,5 @@ import Foundation
 protocol SearchMovieDelegate: AnyObject {
     func addMovie(movie: Movie)
     func reloadTableData()
+    func setLoading(_ isAnimating: Bool)
 }
