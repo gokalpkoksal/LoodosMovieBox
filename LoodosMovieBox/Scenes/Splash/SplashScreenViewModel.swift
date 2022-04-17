@@ -15,6 +15,14 @@ final class SplashScreenViewModel {
     
     private let remoteConfig = RemoteConfig.remoteConfig()
     
+    func checkInternetConnection() {
+        if NetworkMonitor.shared.isConnected {
+            fetchRemoteLogoText()
+        } else {
+            delegate?.showNoInternetConnectionAlert()
+        }
+    }
+    
     func fetchRemoteLogoText() {
         let defaults: [String: NSObject] = ["text_loodos_remote": "loodos_default" as NSObject]
         remoteConfig.setDefaults(defaults)

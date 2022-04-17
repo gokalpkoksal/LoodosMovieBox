@@ -20,6 +20,7 @@
 		7E6A6369280810E700FB75F5 /* LoodosMovieBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6368280810E700FB75F5 /* LoodosMovieBoxTests.swift */; };
 		7E6A6373280810E700FB75F5 /* LoodosMovieBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6372280810E700FB75F5 /* LoodosMovieBoxUITests.swift */; };
 		7E6A6375280810E700FB75F5 /* LoodosMovieBoxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6374280810E700FB75F5 /* LoodosMovieBoxUITestsLaunchTests.swift */; };
+		7EA33DEC280CB59900D9A6B5 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA33DEB280CB59900D9A6B5 /* NetworkMonitor.swift */; };
 		7EEE1D0128099F2100FC5F28 /* SearchMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEE1D0028099F2100FC5F28 /* SearchMovieViewModel.swift */; };
 		7EEE1D0528099FFF00FC5F28 /* SearchMovieContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEE1D0428099FFF00FC5F28 /* SearchMovieContracts.swift */; };
 		7EEE1D0A2809B5CB00FC5F28 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EEE1D092809B5CB00FC5F28 /* Splash.storyboard */; };
@@ -67,6 +68,7 @@
 		7E6A636E280810E700FB75F5 /* LoodosMovieBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoodosMovieBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E6A6372280810E700FB75F5 /* LoodosMovieBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoodosMovieBoxUITests.swift; sourceTree = "<group>"; };
 		7E6A6374280810E700FB75F5 /* LoodosMovieBoxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoodosMovieBoxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7EA33DEB280CB59900D9A6B5 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		7EEE1D0028099F2100FC5F28 /* SearchMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieViewModel.swift; sourceTree = "<group>"; };
 		7EEE1D0428099FFF00FC5F28 /* SearchMovieContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieContracts.swift; sourceTree = "<group>"; };
 		7EEE1D092809B5CB00FC5F28 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				7E6A635A280810E700FB75F5 /* Assets.xcassets */,
 				7E6A6353280810E600FB75F5 /* SceneDelegate.swift */,
 				7E6A6351280810E600FB75F5 /* AppDelegate.swift */,
+				7EA33DEB280CB59900D9A6B5 /* NetworkMonitor.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				7EEE1D0128099F2100FC5F28 /* SearchMovieViewModel.swift in Sources */,
 				7EEE1D0E2809BF7B00FC5F28 /* SplashScreenViewModel.swift in Sources */,
 				7EEE1D182809FDF500FC5F28 /* Reachability.swift in Sources */,
+				7EA33DEC280CB59900D9A6B5 /* NetworkMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

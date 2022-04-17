@@ -8,10 +8,11 @@
 import Foundation
 import FirebaseRemoteConfig
 import UIKit
+import Network
 
 class SplashScreenViewController: UIViewController, SplashScreenDelegate {
     
-    let reachability = try! Reachability()
+    public private(set) var isConnectedToInternet: Bool = false
     var viewModel = SplashScreenViewModel()
     var timer: Timer = Timer()
     var counter = 0
@@ -21,20 +22,15 @@ class SplashScreenViewController: UIViewController, SplashScreenDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        checkInternetConnection()
-        viewModel.fetchRemoteLogoText()
+        viewModel.checkInternetConnection()
     }
-    
-    private func checkInternetConnection() {
-        reachability.whenUnreachable = { _ in
-            self.showNoInternetConnectionAlert()
-        }
-    }
-    
-    private func showNoInternetConnectionAlert() {
+
+    func showNoInternetConnectionAlert() {
         let alert = UIAlertController(title: "No Internet", message: "This app requires internet connection!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
-        self.present(alert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func updateLogoText(text: String) {
