@@ -22,7 +22,8 @@ final class SearchMovieViewModel {
                 self?.delegate?.reloadTableData()
                 
             case .failure(let error):
-                print(error)
+                self?.delegate?.setLoading(false)
+                self?.delegate?.showNoSuchMovieAlert()
             }
         }
     }

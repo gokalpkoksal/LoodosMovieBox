@@ -79,7 +79,20 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
         guard let text = searchBar.text, !text.isEmpty else {
             return
         }
-        viewModel.searchMovie(name: text)
+        
+        if (text.lowercased().rangeOfCharacter(from: CharacterSet(charactersIn: "öüığş")) != nil) {
+            showSpecialCharNotAllowedAlert()
+        } else {
+            viewModel.searchMovie(name: text)
+        }
+    }
+    
+    func showSpecialCharNotAllowedAlert() {
+        let alert = UIAlertController(title: "Special Character Detected", message: "Special characters are not allowed", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func addMovie(movie: Movie) {
@@ -103,6 +116,14 @@ class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITa
                 self.activityIndicator.isHidden = true
                 self.activityIndicator.stopAnimating()
             }
+        }
+    }
+    
+    func showNoSuchMovieAlert() {
+        let alert = UIAlertController(title: "Not Found", message: "The movie you searched was not found", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
