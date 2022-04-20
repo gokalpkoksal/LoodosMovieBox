@@ -12,17 +12,14 @@ import Network
 
 class SplashScreenViewController: UIViewController, SplashScreenDelegate {
     
-    public private(set) var isConnectedToInternet: Bool = false
     var viewModel = SplashScreenViewModel()
-    var timer: Timer = Timer()
-    var counter = 0
 
     @IBOutlet weak var loodosLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        viewModel.checkInternetConnection()
+        viewModel.start()
     }
 
     func showNoInternetConnectionAlert() {
@@ -35,22 +32,10 @@ class SplashScreenViewController: UIViewController, SplashScreenDelegate {
     
     func updateLogoText(text: String) {
         loodosLabel.text = text
-        startTimer()
+        viewModel.startTimer()
     }
     
-    private func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(threeSecondsCounter), userInfo: nil, repeats: true)
-    }
-    
-    @objc func threeSecondsCounter() {
-        counter = counter + 1
-        if counter == 2 {
-            timer.invalidate()
-            navigateToSearchMovieController()
-        }
-    }
-    
-    private func navigateToSearchMovieController() {
+    func navigateToSearchMovieController() {
         let storyboard = UIStoryboard(name: "SearchMovie", bundle: nil)
         guard let vc = storyboard.instantiateInitialViewController() else { return }
         self.present(vc, animated: true, completion: nil)

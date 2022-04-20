@@ -10,4 +10,5 @@ import Foundation
 protocol SplashScreenDelegate: AnyObject {
     func updateLogoText(text: String)
     func showNoInternetConnectionAlert()
+    func navigateToSearchMovieController()
 }

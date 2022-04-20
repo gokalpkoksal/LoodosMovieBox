@@ -10,20 +10,35 @@ import FirebaseRemoteConfig
 
 final class SplashScreenViewModel {
     weak var delegate: SplashScreenDelegate?
+    private var connectedToInternet = NetworkMonitor.shared.isConnected
     
     init() { }
     
     private let remoteConfig = RemoteConfig.remoteConfig()
+    private var timer: Timer = Timer()
+    private var counter = 0
     
-    func checkInternetConnection() {
-        if NetworkMonitor.shared.isConnected {
+    func start() {
+        if connectedToInternet {
             fetchRemoteLogoText()
         } else {
             delegate?.showNoInternetConnectionAlert()
         }
     }
     
-    func fetchRemoteLogoText() {
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(threeSecondsCounter), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func threeSecondsCounter() {
+        counter = counter + 1
+        if counter == 2 {
+            timer.invalidate()
+            delegate?.navigateToSearchMovieController()
+        }
+    }
+    
+    private func fetchRemoteLogoText() {
         let defaults: [String: NSObject] = ["text_loodos_remote": "loodos_default" as NSObject]
         remoteConfig.setDefaults(defaults)
         
