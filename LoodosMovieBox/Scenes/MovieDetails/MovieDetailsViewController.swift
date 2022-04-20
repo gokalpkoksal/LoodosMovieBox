@@ -8,27 +8,24 @@
 import Foundation
 import UIKit
 import Kingfisher
-import Firebase
 
 class MovieDetailsViewController: UIViewController {
     
     @IBOutlet weak var movieNameLabel: UILabel!
-    
     @IBOutlet weak var movieImageView: UIImageView!
     
+    var viewModel = MovieDetailsViewModel()
     var movie = Movie()
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        Analytics.logEvent("movieDetails", parameters: [
-            "movie name" : movie.title as NSObject,
-            "movie year" : movie.year as NSObject
-        ])
-        movieNameLabel.text = movie.title
-        setImage()
+        viewModel.logEvent(movie: movie)
+        setContentInformation()
     }
     
-    func setImage() {
+    private func setContentInformation() {
+        movieNameLabel.text = movie.title
+        
         if movie.image != "" {
             movieImageView.kf.indicatorType = .activity
             movieImageView.kf.setImage(with: URL(string: movie.image), placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
