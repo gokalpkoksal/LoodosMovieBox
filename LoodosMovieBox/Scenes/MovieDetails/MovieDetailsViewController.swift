@@ -20,7 +20,10 @@ class MovieDetailsViewController: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        Analytics.logEvent(movie.title, parameters: nil)
+        Analytics.logEvent("movieDetails", parameters: [
+            "movie name" : movie.title as NSObject,
+            "movie year" : movie.year as NSObject
+        ])
         movieNameLabel.text = movie.title
         setImage()
     }
