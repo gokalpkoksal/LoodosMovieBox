@@ -12,3 +12,8 @@ protocol SplashScreenDelegate: AnyObject {
     func showNoInternetConnectionAlert()
     func navigateToSearchMovieController()
 }
+
+protocol SplashScreenViewModelProtocol {
+    var delegate: SplashScreenDelegate? { get set }
+    func start()
+}

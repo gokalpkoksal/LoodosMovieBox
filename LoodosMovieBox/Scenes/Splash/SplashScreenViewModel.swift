@@ -6,27 +6,32 @@
 //
 
 import Foundation
-import FirebaseRemoteConfig
 
-final class SplashScreenViewModel {
+final class SplashScreenViewModel: SplashScreenViewModelProtocol {
+    
     weak var delegate: SplashScreenDelegate?
-    private var connectedToInternet = NetworkMonitor.shared.isConnected
+    private let networkMonitor: NetworkMonitorProtocol
+    private let appNameService: AppNameServiceProtocol
     
-    init() { }
-    
-    private let remoteConfig = RemoteConfig.remoteConfig()
+    init(networkMonitor: NetworkMonitorProtocol, appNameService: AppNameServiceProtocol) {
+        self.networkMonitor = networkMonitor
+        self.appNameService = appNameService
+    }
     private var timer: Timer = Timer()
     private var counter = 0
     
     func start() {
-        if connectedToInternet {
-            fetchRemoteLogoText()
+        if networkMonitor.isConnected {
+            appNameService.getAppName { appName in
+                self.delegate?.updateLogoText(text: appName)
+                self.startTimer()
+            }
         } else {
             delegate?.showNoInternetConnectionAlert()
         }
     }
     
-    func startTimer() {
+    internal func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(threeSecondsCounter), userInfo: nil, repeats: true)
     }
     
@@ -36,33 +41,5 @@ final class SplashScreenViewModel {
             timer.invalidate()
             delegate?.navigateToSearchMovieController()
         }
-    }
-    
-    private func fetchRemoteLogoText() {
-        let defaults: [String: NSObject] = ["text_loodos_remote": "loodos_default" as NSObject]
-        remoteConfig.setDefaults(defaults)
-        
-        let settings = RemoteConfigSettings()
-        settings.minimumFetchInterval = 0
-        remoteConfig.configSettings = settings
-        
-        self.remoteConfig.fetch(withExpirationDuration: 0, completionHandler: { status, error in
-            if status == .success, error == nil {
-                self.remoteConfig.activate { _, error in
-                    guard error == nil else {
-                        return
-                    }
-                    
-                    if let fetchedValue = self.remoteConfig.configValue(forKey: "text_loodos_remote").stringValue {
-                        DispatchQueue.main.async {
-                            self.delegate?.updateLogoText(text: fetchedValue)
-                        }
-                        print("fetched: \(fetchedValue)")
-                    }
-                }
-            } else {
-                print("sth went wrong!")
-            }
-        })
     }
 }

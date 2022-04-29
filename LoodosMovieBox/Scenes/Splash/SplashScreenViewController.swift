@@ -12,7 +12,7 @@ import Network
 
 class SplashScreenViewController: UIViewController, SplashScreenDelegate {
     
-    var viewModel = SplashScreenViewModel()
+    var viewModel = SplashScreenViewModel(networkMonitor: NetworkMonitor.shared, appNameService: FirebaseService())
 
     @IBOutlet weak var loodosLabel: UILabel!
     
@@ -32,7 +32,6 @@ class SplashScreenViewController: UIViewController, SplashScreenDelegate {
     
     func updateLogoText(text: String) {
         loodosLabel.text = text
-        viewModel.startTimer()
     }
     
     func navigateToSearchMovieController() {

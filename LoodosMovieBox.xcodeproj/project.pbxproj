@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		28AE83338398B695A8ADD82B /* Pods_LoodosMovieBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7893401C76CE00C68A5D6D /* Pods_LoodosMovieBox.framework */; };
+		7E06EC75281C0E36002A865D /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E06EC74281C0E36002A865D /* FirebaseService.swift */; };
 		7E11A3772808942E00C2C918 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A3762808942E00C2C918 /* APICaller.swift */; };
 		7E11A3792808982E00C2C918 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A3782808982E00C2C918 /* Movie.swift */; };
 		7E11A37B2808A14000C2C918 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A37A2808A14000C2C918 /* MovieTableViewCell.swift */; };
@@ -17,7 +18,7 @@
 		7E6A6359280810E600FB75F5 /* SearchMovie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E6A6357280810E600FB75F5 /* SearchMovie.storyboard */; };
 		7E6A635B280810E700FB75F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E6A635A280810E700FB75F5 /* Assets.xcassets */; };
 		7E6A635E280810E700FB75F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E6A635C280810E700FB75F5 /* LaunchScreen.storyboard */; };
-		7E6A6369280810E700FB75F5 /* LoodosMovieBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6368280810E700FB75F5 /* LoodosMovieBoxTests.swift */; };
+		7E6A6369280810E700FB75F5 /* SplashScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6368280810E700FB75F5 /* SplashScreenViewModelTests.swift */; };
 		7E6A6373280810E700FB75F5 /* LoodosMovieBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6372280810E700FB75F5 /* LoodosMovieBoxUITests.swift */; };
 		7E6A6375280810E700FB75F5 /* LoodosMovieBoxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6374280810E700FB75F5 /* LoodosMovieBoxUITestsLaunchTests.swift */; };
 		7EA33DEC280CB59900D9A6B5 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA33DEB280CB59900D9A6B5 /* NetworkMonitor.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E06EC74281C0E36002A865D /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		7E11A3762808942E00C2C918 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		7E11A3782808982E00C2C918 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		7E11A37A2808A14000C2C918 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
@@ -65,7 +67,7 @@
 		7E6A635D280810E700FB75F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E6A635F280810E700FB75F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E6A6364280810E700FB75F5 /* LoodosMovieBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoodosMovieBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E6A6368280810E700FB75F5 /* LoodosMovieBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoodosMovieBoxTests.swift; sourceTree = "<group>"; };
+		7E6A6368280810E700FB75F5 /* SplashScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModelTests.swift; sourceTree = "<group>"; };
 		7E6A636E280810E700FB75F5 /* LoodosMovieBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoodosMovieBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E6A6372280810E700FB75F5 /* LoodosMovieBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoodosMovieBoxUITests.swift; sourceTree = "<group>"; };
 		7E6A6374280810E700FB75F5 /* LoodosMovieBoxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoodosMovieBoxUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -160,7 +162,7 @@
 		7E6A6367280810E700FB75F5 /* LoodosMovieBoxTests */ = {
 			isa = PBXGroup;
 			children = (
-				7E6A6368280810E700FB75F5 /* LoodosMovieBoxTests.swift */,
+				7E6A6368280810E700FB75F5 /* SplashScreenViewModelTests.swift */,
 			);
 			path = LoodosMovieBoxTests;
 			sourceTree = "<group>";
@@ -204,6 +206,7 @@
 				7E6A6353280810E600FB75F5 /* SceneDelegate.swift */,
 				7E6A6351280810E600FB75F5 /* AppDelegate.swift */,
 				7EA33DEB280CB59900D9A6B5 /* NetworkMonitor.swift */,
+				7E06EC74281C0E36002A865D /* FirebaseService.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 			files = (
 				7EF27B9228081AF50029E795 /* SplashScreenViewController.swift in Sources */,
 				7E6A6356280810E600FB75F5 /* SearchMovieViewController.swift in Sources */,
+				7E06EC75281C0E36002A865D /* FirebaseService.swift in Sources */,
 				7E11A37B2808A14000C2C918 /* MovieTableViewCell.swift in Sources */,
 				7E11A3792808982E00C2C918 /* Movie.swift in Sources */,
 				7E6A6352280810E600FB75F5 /* AppDelegate.swift in Sources */,
@@ -452,7 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E6A6369280810E700FB75F5 /* LoodosMovieBoxTests.swift in Sources */,
+				7E6A6369280810E700FB75F5 /* SplashScreenViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +687,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2B8Y2ADVF5;
 				GENERATE_INFOPLIST_FILE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					HEADER_SEARCH_PATHS,
+					"=",
+					"\"${SRCROOT}/Pods/Firebase/CoreOnly/Sources\"",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gokalpkoksal.LoodosMovieBoxTests;
