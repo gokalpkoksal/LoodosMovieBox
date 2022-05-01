@@ -31,6 +31,24 @@ class SplashScreenViewModelTests: XCTestCase {
         // Then Loodos Logo appears
         XCTAssertEqual(view.events, [.updateLogoText(text: "Loodos")] )
     }
+    
+    func testStartWithoutInternet() {
+        // Given Internet not available
+        let monitor = MockNetworkMonitor()
+        monitor.isConnected = false
+        
+        let appNameService = MockAppNameService()
+        let viewModel = SplashScreenViewModel(networkMonitor: monitor, appNameService: appNameService)
+        let view = MockView()
+        viewModel.delegate = view
+        
+        // When view is shown
+        viewModel.start()
+        
+        // Then no internet connection alert appears
+        XCTAssertEqual(view.events, [.showNoInternetConnectionAlert])
+        
+    }
 
 }
 
