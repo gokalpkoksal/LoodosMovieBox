@@ -6,9 +6,7 @@
 //
 
 import Foundation
-import FirebaseRemoteConfig
 import UIKit
-import Network
 
 class SplashScreenViewController: UIViewController, SplashScreenDelegate {
     
