@@ -14,10 +14,10 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!
     
-    var viewModel = MovieDetailsViewModel()
+    var viewModel = MovieDetailsViewModel(analyticsService: AnalyticsService())
     var movie = Movie()
     
-    override func viewDidLoad(){
+    override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.logEvent(movie: movie)
         setContentInformation()

@@ -18,9 +18,10 @@ class SearchMovieViewModelTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func test() {
+    func testSuccess() {
         // Given search movie services available
-        let mockService = MockMovieService(movieServiceSuccess: true)
+        let movie = Movie(title: "MockMovie", year: "1996", image: "")
+        let mockService = MockMovieService(getMoviesResult: .success(movie))
         let viewModel = SearchMovieViewModel(movieService: mockService)
         let view = MockSearchMovieView()
         viewModel.delegate = view
@@ -30,25 +31,24 @@ class SearchMovieViewModelTests: XCTestCase {
         
         // Then correct amount of events fired
         XCTAssertEqual(view.events.count, 4)
+        XCTAssertEqual(
+            view.events,
+            [.setLoading(true), .setLoading(false), .addMovie(movie: movie), .reloadTableData]
+        )
     }
 
 }
 
 class MockMovieService: MovieServiceProtocol {
     
-    private let movie = Movie(title: "MockMovie", year: "1996", image: "")
-    private let movieServiceSuccess: Bool
+    private let getMoviesResult: Result<Movie, Error>
     
-    init(movieServiceSuccess: Bool) {
-        self.movieServiceSuccess = movieServiceSuccess
+    init(getMoviesResult: Result<Movie, Error>) {
+        self.getMoviesResult = getMoviesResult
     }
 
     func getMovies(with title: String, completion: @escaping (Result<Movie, Error>) -> Void) {
-        if movieServiceSuccess {
-            completion(.success(movie))
-        } else {
-            // completion(.failure(Error))
-        }
+        completion(getMoviesResult)
     }
 }
 
@@ -56,7 +56,7 @@ class MockSearchMovieView: SearchMovieDelegate {
     
     var events: [Event] = []
     
-    enum Event {
+    enum Event: Equatable {
         case addMovie(movie: Movie)
         case reloadTableData
         case setLoading(_ isAnimating: Bool)

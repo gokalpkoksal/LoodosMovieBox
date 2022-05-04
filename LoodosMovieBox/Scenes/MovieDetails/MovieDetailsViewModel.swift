@@ -6,16 +6,22 @@
 //
 
 import Foundation
-import Firebase
 
-final class MovieDetailsViewModel {
+enum AnalyticsEventName {
+    static let movieDetails = "movieDetails"
+}
+
+final class MovieDetailsViewModel: MovieDetailsViewModelProtocol {
     
-    init() { }
+    private let analyticsService: FirebaseAnalyticsServiceProtocol
+    
+    init(analyticsService: FirebaseAnalyticsServiceProtocol) {
+        self.analyticsService = analyticsService
+    }
     
     func logEvent(movie: Movie) {
-        Analytics.logEvent("movieDetails", parameters: [
-            "movie name" : movie.title as NSObject,
-            "movie year" : movie.year as NSObject
-        ])
+        let parameters = ["movie name" : movie.title as NSObject,
+                          "movie year" : movie.year as NSObject]
+        analyticsService.logEvent(name: AnalyticsEventName.movieDetails, parameters: parameters)
     }
 }

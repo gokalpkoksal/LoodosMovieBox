@@ -10,7 +10,8 @@
 		28AE83338398B695A8ADD82B /* Pods_LoodosMovieBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7893401C76CE00C68A5D6D /* Pods_LoodosMovieBox.framework */; };
 		7E06EC75281C0E36002A865D /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E06EC74281C0E36002A865D /* FirebaseService.swift */; };
 		7E06EC77281EE10E002A865D /* SearchMovieViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E06EC76281EE10E002A865D /* SearchMovieViewModelTests.swift */; };
-		7E06EC7928226461002A865D /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E06EC7828226461002A865D /* MovieService.swift */; };
+		7E06EC7E2822866E002A865D /* MovieDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E06EC7D2822866E002A865D /* MovieDetailsViewModelTests.swift */; };
+		7E06EC8028228A21002A865D /* MovieDetailsContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E06EC7F28228A21002A865D /* MovieDetailsContracts.swift */; };
 		7E11A3772808942E00C2C918 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A3762808942E00C2C918 /* APICaller.swift */; };
 		7E11A3792808982E00C2C918 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A3782808982E00C2C918 /* Movie.swift */; };
 		7E11A37B2808A14000C2C918 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A37A2808A14000C2C918 /* MovieTableViewCell.swift */; };
@@ -58,7 +59,8 @@
 /* Begin PBXFileReference section */
 		7E06EC74281C0E36002A865D /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		7E06EC76281EE10E002A865D /* SearchMovieViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieViewModelTests.swift; sourceTree = "<group>"; };
-		7E06EC7828226461002A865D /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		7E06EC7D2822866E002A865D /* MovieDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		7E06EC7F28228A21002A865D /* MovieDetailsContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsContracts.swift; sourceTree = "<group>"; };
 		7E11A3762808942E00C2C918 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		7E11A3782808982E00C2C918 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		7E11A37A2808A14000C2C918 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			children = (
 				7E6A6368280810E700FB75F5 /* SplashScreenViewModelTests.swift */,
 				7E06EC76281EE10E002A865D /* SearchMovieViewModelTests.swift */,
+				7E06EC7D2822866E002A865D /* MovieDetailsViewModelTests.swift */,
 			);
 			path = LoodosMovieBoxTests;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				7EEE1D102809C3D000FC5F28 /* MovieDetails.storyboard */,
 				7EEE1D122809C3E000FC5F28 /* MovieDetailsViewController.swift */,
 				7ECC079528100BC800C1EBB3 /* MovieDetailsViewModel.swift */,
+				7E06EC7F28228A21002A865D /* MovieDetailsContracts.swift */,
 			);
 			path = MovieDetails;
 			sourceTree = "<group>";
@@ -440,6 +444,7 @@
 			files = (
 				7EF27B9228081AF50029E795 /* SplashScreenViewController.swift in Sources */,
 				7E6A6356280810E600FB75F5 /* SearchMovieViewController.swift in Sources */,
+				7E06EC8028228A21002A865D /* MovieDetailsContracts.swift in Sources */,
 				7E06EC75281C0E36002A865D /* FirebaseService.swift in Sources */,
 				7E11A37B2808A14000C2C918 /* MovieTableViewCell.swift in Sources */,
 				7E11A3792808982E00C2C918 /* Movie.swift in Sources */,
@@ -462,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E6A6369280810E700FB75F5 /* SplashScreenViewModelTests.swift in Sources */,
+				7E06EC7E2822866E002A865D /* MovieDetailsViewModelTests.swift in Sources */,
 				7E06EC77281EE10E002A865D /* SearchMovieViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

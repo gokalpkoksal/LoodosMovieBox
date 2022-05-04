@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAnalytics
 import FirebaseRemoteConfig
 
 protocol AppNameServiceProtocol {
@@ -48,5 +49,17 @@ class FirebaseService: AppNameServiceProtocol {
             }
         })
     }
+}
+
+protocol FirebaseAnalyticsServiceProtocol {
+    func logEvent(name: String, parameters: [String : Any]?)
+}
+
+class AnalyticsService: FirebaseAnalyticsServiceProtocol {
+    
+    func logEvent(name: String, parameters: [String : Any]?) {
+        Analytics.logEvent(name, parameters: parameters)
+    }
+    
 }
     
