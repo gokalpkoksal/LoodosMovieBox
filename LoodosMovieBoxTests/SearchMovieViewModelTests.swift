@@ -10,8 +10,15 @@ import XCTest
 
 class SearchMovieViewModelTests: XCTestCase {
 
+    var mockService: MockMovieService!
+    var viewModel: SearchMovieViewModel!
+    var view: MockSearchMovieView!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        mockService = MockMovieService()
+        viewModel = SearchMovieViewModel(movieService: mockService)
+        view = MockSearchMovieView()
+        viewModel.delegate = view
     }
 
     override func tearDownWithError() throws {
@@ -21,11 +28,8 @@ class SearchMovieViewModelTests: XCTestCase {
     func testSuccess() {
         // Given search movie services available
         let movie = Movie(title: "MockMovie", year: "1996", image: "")
-        let mockService = MockMovieService(getMoviesResult: .success(movie))
-        let viewModel = SearchMovieViewModel(movieService: mockService)
-        let view = MockSearchMovieView()
-        viewModel.delegate = view
-        
+        mockService.getMoviesResult = .success(movie)
+
         // When view is shown
         viewModel.searchMovie(name: "asd")
         
@@ -36,16 +40,28 @@ class SearchMovieViewModelTests: XCTestCase {
             [.setLoading(true), .setLoading(false), .addMovie(movie: movie), .reloadTableData]
         )
     }
+    
+    func testFailure() {
+        // Given search movie services fail (by deault)
+        
+        // When view is shown
+        viewModel.searchMovie(name: "asd")
+        
+        // Then correct events fired
+        var events = view.events.makeIterator()
+        XCTAssertEqual(events.next(), .setLoading(true))
+        XCTAssertEqual(events.next(), .setLoading(false))
+        XCTAssertEqual(events.next(), .showNoSuchMovieAlert)
+        
+    }
 
 }
 
 class MockMovieService: MovieServiceProtocol {
     
-    private let getMoviesResult: Result<Movie, Error>
+    struct NoResponseError: Error {}
     
-    init(getMoviesResult: Result<Movie, Error>) {
-        self.getMoviesResult = getMoviesResult
-    }
+    var getMoviesResult: Result<Movie, Error> = .failure(NoResponseError())
 
     func getMovies(with title: String, completion: @escaping (Result<Movie, Error>) -> Void) {
         completion(getMoviesResult)

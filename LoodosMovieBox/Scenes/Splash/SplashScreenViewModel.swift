@@ -31,7 +31,7 @@ final class SplashScreenViewModel: SplashScreenViewModelProtocol {
         }
     }
     
-    internal func startTimer() {
+    func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(threeSecondsCounter), userInfo: nil, repeats: true)
     }
     
