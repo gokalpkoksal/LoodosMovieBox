@@ -7,14 +7,18 @@
 
 import Foundation
 
-final class SearchMovieViewModel {
+final class SearchMovieViewModel: SearchMovieViewModelProtocol {
     weak var delegate: SearchMovieDelegate?
     
-    init() { }
+    private let movieService: MovieServiceProtocol
+    
+    init(movieService: MovieServiceProtocol) {
+        self.movieService = movieService
+    }
     
     func searchMovie(name: String) {
         self.delegate?.setLoading(true)
-        APICaller.shared.getMovies(with: name) { [weak self] result in
+        movieService.getMovies(with: name) { [weak self] result in
             switch result {
             case .success(let movie):
                 self?.delegate?.setLoading(false)

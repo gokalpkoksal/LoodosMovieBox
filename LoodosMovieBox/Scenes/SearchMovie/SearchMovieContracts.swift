@@ -13,3 +13,8 @@ protocol SearchMovieDelegate: AnyObject {
     func setLoading(_ isAnimating: Bool)
     func showNoSuchMovieAlert()
 }
+
+protocol SearchMovieViewModelProtocol {
+    var delegate: SearchMovieDelegate? { get set }
+    func searchMovie(name: String)
+}
