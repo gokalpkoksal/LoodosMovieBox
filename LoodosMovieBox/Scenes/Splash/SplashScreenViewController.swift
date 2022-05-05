@@ -10,7 +10,7 @@ import UIKit
 
 class SplashScreenViewController: UIViewController, SplashScreenDelegate {
     
-    var viewModel = SplashScreenViewModel(networkMonitor: NetworkMonitor.shared, appNameService: FirebaseService())
+    var viewModel = SplashScreenViewModel(networkMonitor: NetworkMonitor.shared, appNameService: FirebaseService(), timer: TimerController())
 
     @IBOutlet weak var loodosLabel: UILabel!
     

@@ -15,6 +15,7 @@
 		7E11A3772808942E00C2C918 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A3762808942E00C2C918 /* APICaller.swift */; };
 		7E11A3792808982E00C2C918 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A3782808982E00C2C918 /* Movie.swift */; };
 		7E11A37B2808A14000C2C918 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A37A2808A14000C2C918 /* MovieTableViewCell.swift */; };
+		7E57B2D32824112800AEC87E /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E57B2D22824112800AEC87E /* TimerController.swift */; };
 		7E6A6352280810E600FB75F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6351280810E600FB75F5 /* AppDelegate.swift */; };
 		7E6A6354280810E600FB75F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6353280810E600FB75F5 /* SceneDelegate.swift */; };
 		7E6A6356280810E600FB75F5 /* SearchMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A6355280810E600FB75F5 /* SearchMovieViewController.swift */; };
@@ -64,6 +65,7 @@
 		7E11A3762808942E00C2C918 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		7E11A3782808982E00C2C918 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		7E11A37A2808A14000C2C918 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		7E57B2D22824112800AEC87E /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		7E6A634E280810E600FB75F5 /* LoodosMovieBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoodosMovieBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E6A6351280810E600FB75F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E6A6353280810E600FB75F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				7E6A6351280810E600FB75F5 /* AppDelegate.swift */,
 				7EA33DEB280CB59900D9A6B5 /* NetworkMonitor.swift */,
 				7E06EC74281C0E36002A865D /* FirebaseService.swift */,
+				7E57B2D22824112800AEC87E /* TimerController.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				7E11A3772808942E00C2C918 /* APICaller.swift in Sources */,
 				7EEE1D0528099FFF00FC5F28 /* SearchMovieContracts.swift in Sources */,
 				7E6A6354280810E600FB75F5 /* SceneDelegate.swift in Sources */,
+				7E57B2D32824112800AEC87E /* TimerController.swift in Sources */,
 				7EEE1D132809C3E000FC5F28 /* MovieDetailsViewController.swift in Sources */,
 				7EEE1D0C2809BF1F00FC5F28 /* SplashScreenContracts.swift in Sources */,
 				7EEE1D0128099F2100FC5F28 /* SearchMovieViewModel.swift in Sources */,

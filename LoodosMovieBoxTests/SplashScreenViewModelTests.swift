@@ -10,46 +10,66 @@ import XCTest
 
 class SplashScreenViewModelTests: XCTestCase {
     
-
+    var monitor: MockNetworkMonitor!
+    var appNameService: MockAppNameService!
+    var timer: MockTimer!
+    var viewModel: SplashScreenViewModel!
+    var view: MockView!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        monitor = MockNetworkMonitor()
+        appNameService = MockAppNameService()
+        timer = MockTimer()
+        viewModel = SplashScreenViewModel(networkMonitor: monitor, appNameService: appNameService, timer: timer)
+        view = MockView()
+        viewModel.delegate = view
     }
 
     func testStart() throws {
-        // Given Internet available
-        let monitor = MockNetworkMonitor()
+        // Given Internet available and appName is "Loodos"
         monitor.isConnected = true
-        let appNameService = MockAppNameService()
         appNameService.appName = "Loodos"
-        let viewModel = SplashScreenViewModel(networkMonitor: monitor, appNameService: appNameService)
-        let view = MockView()
-        viewModel.delegate = view
         
-        // When view is shown
+        // When view is shown and 3 seconds has passed
         viewModel.start()
+        timer.finishCounting()
         
         // Then Loodos Logo appears
-        XCTAssertEqual(view.events, [.updateLogoText(text: "Loodos")] )
+        var events = view.events.makeIterator()
+        XCTAssertEqual(events.next(), .updateLogoText(text: "Loodos"))
+        XCTAssertEqual(events.next(), .navigateToSearchMovieController)
+        XCTAssertEqual(events.next(), nil)
     }
     
     func testStartWithoutInternet() {
         // Given Internet not available
-        let monitor = MockNetworkMonitor()
         monitor.isConnected = false
-        
-        let appNameService = MockAppNameService()
-        let viewModel = SplashScreenViewModel(networkMonitor: monitor, appNameService: appNameService)
-        let view = MockView()
-        viewModel.delegate = view
         
         // When view is shown
         viewModel.start()
         
         // Then no internet connection alert appears
-        XCTAssertEqual(view.events, [.showNoInternetConnectionAlert])
-        
+        var events = view.events.makeIterator()
+        XCTAssertEqual(events.next(), .showNoInternetConnectionAlert)
+        XCTAssertEqual(events.next(), nil)
     }
 
+}
+
+class MockTimer: TimerProtocol {
+    
+    var completion: (() -> Void)?
+    
+    func finishCounting() {
+        if let completion = completion {
+            completion()
+        }
+    }
+    
+    func startTimer(durationInSeconds: Double, completion: @escaping () -> Void) {
+        self.completion = completion
+    }
+    
 }
 
 class MockNetworkMonitor: NetworkMonitorProtocol {
