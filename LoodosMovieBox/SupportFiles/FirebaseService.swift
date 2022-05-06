@@ -62,4 +62,13 @@ class AnalyticsService: FirebaseAnalyticsServiceProtocol {
     }
     
 }
+
+enum AnalyticsEventName {
+    static let movieDetails = "movieDetails"
+}
+
+enum AnalyticsEventParameterName {
+    static let movieName = "movie name"
+    static let movieYear = "movie year"
+}
     
