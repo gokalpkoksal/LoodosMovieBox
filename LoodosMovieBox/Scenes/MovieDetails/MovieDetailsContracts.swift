@@ -8,5 +8,11 @@
 import Foundation
 
 protocol MovieDetailsViewModelProtocol {
+    var delegate: MovieDetailsDelegate? { get set }
+    func start(movie: Movie)
     func logEvent(movie: Movie)
+}
+
+protocol MovieDetailsDelegate: AnyObject {
+    func setContentInformation(movieTitle: String, movieImageUrlString: String)
 }

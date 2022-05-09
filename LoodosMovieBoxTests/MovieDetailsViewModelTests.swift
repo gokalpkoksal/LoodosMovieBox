@@ -17,19 +17,51 @@ class MovieDetailsViewModelTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testStart() throws {
+        // Given a movie to viewModel
+        let view = MockMovieDetailsView()
+        let mockService = MockFirebaseAnalyticsService()
+        let viewModel = MovieDetailsViewModel(analyticsService: mockService)
+        viewModel.delegate = view
+        
+        // When view is shown
+        viewModel.start(movie: Movie(title: "Movie Test", year: "2000", image: ""))
+        
+        // Correct events fired
+        var events = view.events.makeIterator()
+        XCTAssertEqual(events.next(), .setContentInformation(movieTitle: "Movie Test", movieImageUrlString: ""))
+        XCTAssertEqual(events.next(), nil)
+    }
 
     func testLogEvent() throws {
+        // Given a mock firebase analytics service
         let mockAnalyticsService = MockFirebaseAnalyticsService()
         let viewModel = MovieDetailsViewModel(analyticsService: mockAnalyticsService)
         
+        // When logEvent called
         viewModel.logEvent(movie: Movie(title: "Movie Test", year: "2000", image: ""))
         
+        // logEvent fired with correct parameters
         let parameters = mockAnalyticsService.parameters
         XCTAssertEqual(mockAnalyticsService.eventName, AnalyticsEventName.movieDetails)
         XCTAssertEqual(parameters[AnalyticsEventParameterName.movieName] as! String, "Movie Test")
         XCTAssertEqual(parameters[AnalyticsEventParameterName.movieYear] as! String, "2000")
         XCTAssertEqual(parameters.count, 2)
         XCTAssertEqual(mockAnalyticsService.eventLogged, true)
+    }
+}
+
+class MockMovieDetailsView: MovieDetailsDelegate {
+    
+    var events = [MovieDetailsEvent]()
+    
+    enum MovieDetailsEvent: Equatable {
+        case setContentInformation(movieTitle: String, movieImageUrlString: String)
+    }
+    
+    func setContentInformation(movieTitle: String, movieImageUrlString: String) {
+        events.append(.setContentInformation(movieTitle: movieTitle, movieImageUrlString: movieImageUrlString))
     }
 }
 

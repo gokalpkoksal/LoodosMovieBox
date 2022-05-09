@@ -246,9 +246,9 @@
 			isa = PBXGroup;
 			children = (
 				7EEE1D102809C3D000FC5F28 /* MovieDetails.storyboard */,
+				7E06EC7F28228A21002A865D /* MovieDetailsContracts.swift */,
 				7EEE1D122809C3E000FC5F28 /* MovieDetailsViewController.swift */,
 				7ECC079528100BC800C1EBB3 /* MovieDetailsViewModel.swift */,
-				7E06EC7F28228A21002A865D /* MovieDetailsContracts.swift */,
 			);
 			path = MovieDetails;
 			sourceTree = "<group>";

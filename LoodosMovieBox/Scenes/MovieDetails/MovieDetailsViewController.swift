@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Kingfisher
 
-class MovieDetailsViewController: UIViewController {
+class MovieDetailsViewController: UIViewController, MovieDetailsDelegate {
     
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!
@@ -19,16 +19,16 @@ class MovieDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.logEvent(movie: movie)
-        setContentInformation()
+        viewModel.delegate = self
+        viewModel.start(movie: movie)
     }
-      
-    private func setContentInformation() {
-        movieNameLabel.text = movie.title
+    
+    func setContentInformation(movieTitle: String, movieImageUrlString: String) {
+        movieNameLabel.text = movieTitle
         
-        if movie.image != "" {
+        if movieImageUrlString != "" {
             movieImageView.kf.indicatorType = .activity
-            movieImageView.kf.setImage(with: URL(string: movie.image), placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
+            movieImageView.kf.setImage(with: URL(string: movieImageUrlString), placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
         }
     }
 }
