@@ -9,7 +9,7 @@ import UIKit
 
 class SearchMovieViewController: UIViewController, UISearchResultsUpdating, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, SearchMovieDelegate {
     
-    var viewModel = SearchMovieViewModel(movieService: APICaller.shared)
+    var viewModel = SearchMovieViewModel(movieService: MovieService.shared)
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!

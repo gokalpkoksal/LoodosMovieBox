@@ -11,8 +11,8 @@ protocol MovieServiceProtocol {
     func getMovies(with title: String, completion: @escaping (Result<Movie, Error>) -> Void)
 }
 
-final class APICaller: MovieServiceProtocol {
-    static let shared = APICaller()
+final class MovieService: MovieServiceProtocol {
+    static let shared = MovieService()
     
     private let apiKey = "37e5bca1"
     
