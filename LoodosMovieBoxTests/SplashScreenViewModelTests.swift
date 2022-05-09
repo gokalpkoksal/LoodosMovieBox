@@ -32,7 +32,7 @@ class SplashScreenViewModelTests: XCTestCase {
         
         // When view is shown and 3 seconds has passed
         viewModel.start()
-        timer.finishCounting()
+        timer.advance(by: 3)
         
         // Then Loodos Logo appears
         var events = view.events.makeIterator()
@@ -58,18 +58,27 @@ class SplashScreenViewModelTests: XCTestCase {
 
 class MockTimer: TimerProtocol {
     
-    var completion: (() -> Void)?
+    var interval: TimeInterval? = nil
+    var tick: (() -> Bool)?
+    private var currentTime: TimeInterval = 0
     
-    func finishCounting() {
-        if let completion = completion {
-            completion()
+    func advance(by time: TimeInterval) {
+        currentTime += time
+        if let interval = interval {
+            var numberOfTicks = Int(currentTime / interval)
+            while numberOfTicks > 0 {
+                if let tick = tick {
+                    tick()
+                }
+                numberOfTicks -= 1
+            }
         }
     }
     
-    func startTimer(durationInSeconds: Double, completion: @escaping () -> Void) {
-        self.completion = completion
+    func startTimer(interval: TimeInterval, tick: @escaping () -> Bool) {
+        self.interval = interval
+        self.tick = tick
     }
-    
 }
 
 class MockNetworkMonitor: NetworkMonitorProtocol {

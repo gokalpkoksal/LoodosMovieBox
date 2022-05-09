@@ -22,14 +22,14 @@ class MovieDetailsViewModelTests: XCTestCase {
         let mockAnalyticsService = MockFirebaseAnalyticsService()
         let viewModel = MovieDetailsViewModel(analyticsService: mockAnalyticsService)
         
-        viewModel.logEvent(movie: Movie())
+        viewModel.logEvent(movie: Movie(title: "Movie Test", year: "2000", image: ""))
         
         let parameters = mockAnalyticsService.parameters
-        XCTAssertEqual(mockAnalyticsService.eventLogged, true)
         XCTAssertEqual(mockAnalyticsService.eventName, AnalyticsEventName.movieDetails)
+        XCTAssertEqual(parameters[AnalyticsEventParameterName.movieName] as! String, "Movie Test")
+        XCTAssertEqual(parameters[AnalyticsEventParameterName.movieYear] as! String, "2000")
         XCTAssertEqual(parameters.count, 2)
-        XCTAssertEqual(parameters.keys.contains(AnalyticsEventParameterName.movieName), true)
-        XCTAssertEqual(parameters.keys.contains(AnalyticsEventParameterName.movieYear), true)
+        XCTAssertEqual(mockAnalyticsService.eventLogged, true)
     }
 }
 

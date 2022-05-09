@@ -22,7 +22,7 @@ class MovieDetailsViewController: UIViewController {
         viewModel.logEvent(movie: movie)
         setContentInformation()
     }
-    
+      
     private func setContentInformation() {
         movieNameLabel.text = movie.title
         
@@ -32,3 +32,4 @@ class MovieDetailsViewController: UIViewController {
         }
     }
 }
+// TODO: Movie cannot be in View Layer
