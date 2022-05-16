@@ -19,7 +19,7 @@ class MovieDetailsViewModelTests: XCTestCase {
     }
     
     func testStart() throws {
-        // Given a movie to viewModel
+        // Given a movie
         let view = MockMovieDetailsView()
         let mockService = MockFirebaseAnalyticsService()
         let viewModel = MovieDetailsViewModel(analyticsService: mockService)
@@ -28,7 +28,7 @@ class MovieDetailsViewModelTests: XCTestCase {
         // When view is shown
         viewModel.start(movie: Movie(title: "Movie Test", year: "2000", image: ""))
         
-        // Correct events fired
+        // Then title and image is updated on view
         var events = view.events.makeIterator()
         XCTAssertEqual(events.next(), .setContentInformation(movieTitle: "Movie Test", movieImageUrlString: ""))
         XCTAssertEqual(events.next(), nil)

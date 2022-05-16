@@ -59,7 +59,7 @@ class SplashScreenViewModelTests: XCTestCase {
 class MockTimer: TimerProtocol {
     
     var interval: TimeInterval? = nil
-    var tick: (() -> Bool)?
+    var tick: (() -> Void)?
     private var currentTime: TimeInterval = 0
     
     func advance(by time: TimeInterval) {
@@ -75,9 +75,13 @@ class MockTimer: TimerProtocol {
         }
     }
     
-    func startTimer(interval: TimeInterval, tick: @escaping () -> Bool) {
+    func startTimer(interval: TimeInterval, tick: @escaping () -> Void) {
         self.interval = interval
         self.tick = tick
+    }
+    
+    func stopTimer() {
+        // do nothing
     }
 }
 

@@ -21,18 +21,24 @@ final class SplashScreenViewModel: SplashScreenViewModelProtocol {
         self.timer = timer
     }
     
+    private func startTimer() {
+        timer.startTimer(interval: 1, tick: { [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.counter += 1
+            if self.counter == 3 {
+                self.delegate?.navigateToSearchMovieController()
+                self.timer.stopTimer()
+            }
+        })
+    }
+    
     func start() {
         if networkMonitor.isConnected {
-            appNameService.getAppName { appName in
-                self.delegate?.updateLogoText(text: appName)
-                self.timer.startTimer(interval: 1) {
-                    self.counter += 1
-                    if self.counter == 3 {
-                        self.delegate?.navigateToSearchMovieController()
-                        return true
-                    }
-                    return false
-                }
+            appNameService.getAppName { [weak self] appName in
+                self?.delegate?.updateLogoText(text: appName)
+                self?.startTimer()
             }
         } else {
             delegate?.showNoInternetConnectionAlert()

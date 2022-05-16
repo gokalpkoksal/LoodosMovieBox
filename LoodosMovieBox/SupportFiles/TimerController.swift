@@ -8,15 +8,22 @@
 import Foundation
 
 protocol TimerProtocol {
-    func startTimer(interval: TimeInterval, tick: @escaping () -> Bool)
+    func startTimer(interval: TimeInterval, tick: @escaping () -> Void)
+    func stopTimer()
 }
 
 class TimerController: TimerProtocol {
     
-    func startTimer(interval: TimeInterval, tick: @escaping () -> Bool) {
-        Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { timer in
-            let finished = tick()
-            if finished { timer.invalidate() }
+    var timer: Timer?
+    
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    func startTimer(interval: TimeInterval, tick: @escaping () -> Void) {
+        timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { _ in
+            tick()
         }
     }
     

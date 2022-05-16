@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2604CB8F885B2BB821EE644C /* Pods_LoodosMovieBox_LoodosMovieBoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CDAEB96E8DD92DBF3E3E26 /* Pods_LoodosMovieBox_LoodosMovieBoxUITests.framework */; };
 		28AE83338398B695A8ADD82B /* Pods_LoodosMovieBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7893401C76CE00C68A5D6D /* Pods_LoodosMovieBox.framework */; };
 		7E06EC75281C0E36002A865D /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E06EC74281C0E36002A865D /* FirebaseService.swift */; };
 		7E06EC77281EE10E002A865D /* SearchMovieViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E06EC76281EE10E002A865D /* SearchMovieViewModelTests.swift */; };
@@ -37,6 +38,7 @@
 		7EEE1D162809F19700FC5F28 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7EEE1D152809F19700FC5F28 /* Kingfisher */; };
 		7EF27B902808183D0029E795 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF27B8F2808183D0029E795 /* GoogleService-Info.plist */; };
 		7EF27B9228081AF50029E795 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF27B9128081AF50029E795 /* SplashScreenViewController.swift */; };
+		82BF206AC71B4DD14412D4BB /* Pods_LoodosMovieBoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56288B6A13B3E15408D408A8 /* Pods_LoodosMovieBoxTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3824871EAB1EE89B2C2911A1 /* Pods-LoodosMovieBox-LoodosMovieBoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoodosMovieBox-LoodosMovieBoxUITests.release.xcconfig"; path = "Target Support Files/Pods-LoodosMovieBox-LoodosMovieBoxUITests/Pods-LoodosMovieBox-LoodosMovieBoxUITests.release.xcconfig"; sourceTree = "<group>"; };
+		56288B6A13B3E15408D408A8 /* Pods_LoodosMovieBoxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoodosMovieBoxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E06EC74281C0E36002A865D /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		7E06EC76281EE10E002A865D /* SearchMovieViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieViewModelTests.swift; sourceTree = "<group>"; };
 		7E06EC7D2822866E002A865D /* MovieDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModelTests.swift; sourceTree = "<group>"; };
@@ -89,9 +93,13 @@
 		7EEE1D122809C3E000FC5F28 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		7EF27B8F2808183D0029E795 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7EF27B9128081AF50029E795 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		82CDAEB96E8DD92DBF3E3E26 /* Pods_LoodosMovieBox_LoodosMovieBoxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoodosMovieBox_LoodosMovieBoxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D03733829A86EEEE92F101 /* Pods-LoodosMovieBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoodosMovieBox.debug.xcconfig"; path = "Target Support Files/Pods-LoodosMovieBox/Pods-LoodosMovieBox.debug.xcconfig"; sourceTree = "<group>"; };
+		C7799E52C22B2E7112DA9659 /* Pods-LoodosMovieBox-LoodosMovieBoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoodosMovieBox-LoodosMovieBoxUITests.debug.xcconfig"; path = "Target Support Files/Pods-LoodosMovieBox-LoodosMovieBoxUITests/Pods-LoodosMovieBox-LoodosMovieBoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E09791D04F97F466D162E917 /* Pods-LoodosMovieBoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoodosMovieBoxTests.release.xcconfig"; path = "Target Support Files/Pods-LoodosMovieBoxTests/Pods-LoodosMovieBoxTests.release.xcconfig"; sourceTree = "<group>"; };
 		EE7893401C76CE00C68A5D6D /* Pods_LoodosMovieBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoodosMovieBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBB423171A21C57B7FBBC6B /* Pods-LoodosMovieBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoodosMovieBox.release.xcconfig"; path = "Target Support Files/Pods-LoodosMovieBox/Pods-LoodosMovieBox.release.xcconfig"; sourceTree = "<group>"; };
+		FDA83D528C586740FCE42CB4 /* Pods-LoodosMovieBoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoodosMovieBoxTests.debug.xcconfig"; path = "Target Support Files/Pods-LoodosMovieBoxTests/Pods-LoodosMovieBoxTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82BF206AC71B4DD14412D4BB /* Pods_LoodosMovieBoxTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2604CB8F885B2BB821EE644C /* Pods_LoodosMovieBox_LoodosMovieBoxUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +136,10 @@
 			children = (
 				84D03733829A86EEEE92F101 /* Pods-LoodosMovieBox.debug.xcconfig */,
 				EFBB423171A21C57B7FBBC6B /* Pods-LoodosMovieBox.release.xcconfig */,
+				C7799E52C22B2E7112DA9659 /* Pods-LoodosMovieBox-LoodosMovieBoxUITests.debug.xcconfig */,
+				3824871EAB1EE89B2C2911A1 /* Pods-LoodosMovieBox-LoodosMovieBoxUITests.release.xcconfig */,
+				FDA83D528C586740FCE42CB4 /* Pods-LoodosMovieBoxTests.debug.xcconfig */,
+				E09791D04F97F466D162E917 /* Pods-LoodosMovieBoxTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -254,6 +268,8 @@
 			isa = PBXGroup;
 			children = (
 				EE7893401C76CE00C68A5D6D /* Pods_LoodosMovieBox.framework */,
+				82CDAEB96E8DD92DBF3E3E26 /* Pods_LoodosMovieBox_LoodosMovieBoxUITests.framework */,
+				56288B6A13B3E15408D408A8 /* Pods_LoodosMovieBoxTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -287,9 +303,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E6A637B280810E700FB75F5 /* Build configuration list for PBXNativeTarget "LoodosMovieBoxTests" */;
 			buildPhases = (
+				79D78F15E65D610A32D8B244 /* [CP] Check Pods Manifest.lock */,
 				7E6A6360280810E700FB75F5 /* Sources */,
 				7E6A6361280810E700FB75F5 /* Frameworks */,
 				7E6A6362280810E700FB75F5 /* Resources */,
+				03F7C2C90A3BDEE69E61777B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,9 +323,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E6A637E280810E700FB75F5 /* Build configuration list for PBXNativeTarget "LoodosMovieBoxUITests" */;
 			buildPhases = (
+				599B93D49479CBB48C5C80D1 /* [CP] Check Pods Manifest.lock */,
 				7E6A636A280810E700FB75F5 /* Sources */,
 				7E6A636B280810E700FB75F5 /* Frameworks */,
 				7E6A636C280810E700FB75F5 /* Resources */,
+				BDB9BA35760732AAB1A60D8F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -352,7 +372,7 @@
 			);
 			mainGroup = 7E6A6345280810E500FB75F5;
 			packageReferences = (
-				7EEE1D142809F19700FC5F28 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				7EEE1D142809F19700FC5F28 /* XCRemoteSwiftPackageReference "Kingfisher.git" */,
 			);
 			productRefGroup = 7E6A634F280810E600FB75F5 /* Products */;
 			projectDirPath = "";
@@ -396,6 +416,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		03F7C2C90A3BDEE69E61777B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoodosMovieBoxTests/Pods-LoodosMovieBoxTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoodosMovieBoxTests/Pods-LoodosMovieBoxTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoodosMovieBoxTests/Pods-LoodosMovieBoxTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1B795FEDFB4A94216A2F7BB8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -411,6 +448,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoodosMovieBox/Pods-LoodosMovieBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		599B93D49479CBB48C5C80D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LoodosMovieBox-LoodosMovieBoxUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6633207F885D385BDE8B2E03 /* [CP] Check Pods Manifest.lock */ = {
@@ -433,6 +492,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79D78F15E65D610A32D8B244 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LoodosMovieBoxTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDB9BA35760732AAB1A60D8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoodosMovieBox-LoodosMovieBoxUITests/Pods-LoodosMovieBox-LoodosMovieBoxUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoodosMovieBox-LoodosMovieBoxUITests/Pods-LoodosMovieBox-LoodosMovieBoxUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoodosMovieBox-LoodosMovieBoxUITests/Pods-LoodosMovieBox-LoodosMovieBoxUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -641,7 +739,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2B8Y2ADVF5;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = LoodosMovieBox/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -670,7 +770,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2B8Y2ADVF5;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = LoodosMovieBox/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -692,6 +794,7 @@
 		};
 		7E6A637C280810E700FB75F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDA83D528C586740FCE42CB4 /* Pods-LoodosMovieBoxTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -717,6 +820,7 @@
 		};
 		7E6A637D280810E700FB75F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E09791D04F97F466D162E917 /* Pods-LoodosMovieBoxTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -737,6 +841,7 @@
 		};
 		7E6A637F280810E700FB75F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7799E52C22B2E7112DA9659 /* Pods-LoodosMovieBox-LoodosMovieBoxUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -755,6 +860,7 @@
 		};
 		7E6A6380280810E700FB75F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3824871EAB1EE89B2C2911A1 /* Pods-LoodosMovieBox-LoodosMovieBoxUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -813,7 +919,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7EEE1D142809F19700FC5F28 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		7EEE1D142809F19700FC5F28 /* XCRemoteSwiftPackageReference "Kingfisher.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
@@ -826,7 +932,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		7EEE1D152809F19700FC5F28 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7EEE1D142809F19700FC5F28 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 7EEE1D142809F19700FC5F28 /* XCRemoteSwiftPackageReference "Kingfisher.git" */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
