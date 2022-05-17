@@ -19,6 +19,7 @@ final class MovieService: MovieServiceProtocol {
     private init() {}
     
     public func getUrl(title: String) -> URL? {
+        let title = title.replacingOccurrences(of: " ", with: "&")
         let urlString = "https://www.omdbapi.com/?t=\(title)&apikey=\(apiKey)"
         return URL(string: urlString)
     }
